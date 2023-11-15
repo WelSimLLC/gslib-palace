@@ -1542,12 +1542,12 @@ void fgs_setup_pick(sint *handle, const slong id[], const sint *n,
   *handle = fgs_n++;
 }
 
-void fgs_setup(sint *handle, const slong id[], const sint *n,
-               const MPI_Fint *comm, const sint *np)
-{
-  const sint method = gs_auto;
-  fgs_setup_pick(handle,id,n,comm,np,&method);
-}
+//void fgs_setup(sint *handle, const slong id[], const sint *n,
+//               const MPI_Fint *comm, const sint *np)
+//{
+//  const sint method = gs_auto;
+//  fgs_setup_pick(handle,id,n,comm,np,&method);
+//}
 
 static void fgs_check_handle(sint handle, const char *func, unsigned line)
 {
@@ -1648,19 +1648,19 @@ void fgs_fields(const sint *handle,
            *transpose!=0, fgs_info[*handle],0);
 }
 
-void fgs_free(const sint *handle)
-{
-  fgs_check_handle(*handle,"gs_free",__LINE__);
-  cgs_free(fgs_info[*handle]);
-  fgs_info[*handle] = 0;
-}
+//void fgs_free(const sint *handle)
+//{
+//  fgs_check_handle(*handle,"gs_free",__LINE__);
+//  cgs_free(fgs_info[*handle]);
+//  fgs_info[*handle] = 0;
+//}
 
-void fgs_unique(slong id[], const sint *n, const MPI_Fint *c, const sint *np)
-{
-  struct comm *comm;
-  uint un = *n;
-  comm = tmalloc(struct comm, 1);
-  comm_init_check(comm, *c, *np);
-  cgs_unique(id, un, comm);
-  free(comm);
-}
+//void fgs_unique(slong id[], const sint *n, const MPI_Fint *c, const sint *np)
+//{
+//  struct comm *comm;
+//  uint un = *n;
+//  comm = tmalloc(struct comm, 1);
+//  comm_init_check(comm, *c, *np);
+//  cgs_unique(id, un, comm);
+//  free(comm);
+//}

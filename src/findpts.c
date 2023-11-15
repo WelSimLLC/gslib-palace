@@ -344,8 +344,8 @@ void ffindpts_setup(sint *const handle,
     comm_init_check(&fd->cr.comm, *comm, *np);
     buffer_init(&fd->cr.data,1000);
     buffer_init(&fd->cr.work,1000);
-    const uint *nsid;
-    const double *distfint;
+    const uint *nsid = NULL;
+    const double *distfint=NULL;
     setupms_aux_3(fd, elx,n,*nel,m,*bbox_tol,
                 *loc_hash_size,*gbl_hash_size, *npt_max, *newt_tol, nsid, distfint,ims);
   } else
@@ -355,7 +355,7 @@ void ffindpts_setup(sint *const handle,
 }
 
 #define CHECK_HANDLE(func) \
-  struct handle *h; \
+  struct handle *h=NULL; \
   if(*handle<0 || *handle>=handle_n || !(h=&handle_array[*handle])->data) \
     fail(1,__FILE__,__LINE__,func ": invalid handle")
 

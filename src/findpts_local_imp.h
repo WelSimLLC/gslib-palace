@@ -298,7 +298,7 @@ static void map_points_to_els(
   {
     struct index_el *const p =
       array_reserve(struct index_el,map,map->n+1);
-    p[map->n].el = -(uint)1;
+    p[map->n].el = 0-(uint)1;
   }
 }
 

@@ -4,12 +4,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>$(MSMPI_INC);$(INTEL_MKL)\include;$(WELSIM_LIBPACK)\include\metis;$(WELSIM_LIBPACK)\include\hypre;$(IncludePath)</IncludePath>
+    <IncludePath>$(MSMPI_INC);$(INTEL_MKL)\include;$(WELSIM_LIBPACK)\include\metis;$(WELSIM_LIBPACK)\include\hypre;$(WELSIM_LIBPACK)\include\gmp;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <PostBuildEvent>
       <Command>postbuild_gslib-palace</Command>
     </PostBuildEvent>
+    <ClCompile>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>

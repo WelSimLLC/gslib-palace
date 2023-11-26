@@ -1,6 +1,8 @@
 #ifndef GS_NAME_H
 #define GS_NAME_H
 
+#include "config.h"
+
 /* establishes some macros to establish
    * the FORTRAN naming convention
      default         gs_setup, etc.

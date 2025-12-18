@@ -38,7 +38,6 @@
 #define findpts_free          GS_TOKEN_PASTE(GS_PREFIXED_NAME(findpts_free_ ),D)
 #define findpts               GS_TOKEN_PASTE(GS_PREFIXED_NAME(findpts_      ),D)
 #define findpts_eval          GS_TOKEN_PASTE(GS_PREFIXED_NAME(findpts_eval_ ),D)
-#define findpts_local_eval    GS_TOKEN_PASTE(GS_PREFIXED_NAME(findpts_local_eval_ ),D)
 #define setup_fev_aux         GS_TOKEN_PASTE(setup_fev_aux_,D)
 
 struct hash_data {
@@ -279,7 +278,10 @@ void findptsms(        uint   *const        code_base, const unsigned       code
                  const uint   *const session_id_match, const uint                   npt,
                        struct findpts_data *const fd)
 {
-  if (fd->fevsetup==1) array_free(&fd->savpt); fd->fevsetup=0;
+  if (fd->fevsetup==1) {
+    array_free(&fd->savpt);
+    fd->fevsetup=0;
+  }
   const uint np = fd->cr.comm.np, id=fd->cr.comm.id;
   struct array hash_pt, src_pt, out_pt;
   double *distv = tmalloc(double,npt);
@@ -656,8 +658,8 @@ void findpts(      uint   *const  code_base   , const unsigned  code_stride   ,
              const uint npt, struct findpts_data *const fd)
 {
     if (fd->local.ims==1) {
-       printf("Please use findptsms\n");
-       die(1);
+       printf("call findptsms for multi-session support\n");
+       die(EXIT_FAILURE);
     }
     unsigned int sess_base = 0;
     unsigned int sess_match = 0;

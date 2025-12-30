@@ -63,9 +63,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="config.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\c99.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -139,6 +136,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\types.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\config.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

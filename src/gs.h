@@ -5,6 +5,7 @@
 #warning "gs.h" requires "comm.h", "gs_defs.h", and "mem.h"
 #endif
 
+#include "config.h"
 /*
   Gather/Scatter Library
 

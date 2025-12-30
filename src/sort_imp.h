@@ -280,7 +280,7 @@ static void radix_sortp(
 #define MERGE_SORT() \
   do {                                                                 \
     uint i=0, n=An, odd=0, c=0, b=1;                                   \
-    sint  base=-n;                                                     \
+    sint  base=0-n;                                                     \
     for(;;) {                                                          \
       DATA *restrict p;                                                \
       if((c&1)==0) {                                                   \

@@ -1,14 +1,14 @@
 #ifndef GS_MPI
 #define GS_MPI
 #endif
-#ifndef GS_UNDERSCORE
-#define GS_UNDERSCORE
+#ifndef GSLIB_UNDERSCORE
+#define GSLIB_UNDERSCORE
 #endif
-#ifndef GS_PREFIX
-#define GS_PREFIX gslib_
+#ifndef GSLIB_PREFIX
+#define GSLIB_PREFIX gslib_
 #endif
-#ifndef GS_FPREFIX
-#define GS_FPREFIX fgslib_
+#ifndef GSLIB_FPREFIX
+#define GSLIB_FPREFIX fgslib_
 #endif
 #ifndef GS_GLOBAL_LONG_LONG
 #define GS_GLOBAL_LONG_LONG
@@ -16,3 +16,10 @@
 #ifndef GS_USE_NAIVE_BLAS
 #define GS_USE_NAIVE_BLAS
 #endif
+#ifndef GSLIB_USE_MKL
+#define GSLIB_USE_MKL
+#endif
+#ifndef GSLIB_USE_CBLAS
+#define GSLIB_USE_CBLAS
+#endif
+

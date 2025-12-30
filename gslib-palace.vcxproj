@@ -31,9 +31,9 @@
     <ClCompile Include="src\tensor.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="config.h" />
     <ClInclude Include="src\c99.h" />
     <ClInclude Include="src\comm.h" />
+    <ClInclude Include="src\config.h" />
     <ClInclude Include="src\crystal.h" />
     <ClInclude Include="src\fail.h" />
     <ClInclude Include="src\findpts.h" />

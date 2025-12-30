@@ -1011,7 +1011,7 @@ static void allreduce_exec_wait(
   /* Why do I need this? Ugly */
   if (comm->np > 1)
     comm_wait(ard->req, 1);
-#ifdef GSLIB_USE_MPI
+#ifdef GS_MPI
   memcpy(buf,ardbuf,gvn*gs_dom_size[dom]);
 #endif
   /* buffer -> user array */

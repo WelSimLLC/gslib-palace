@@ -117,8 +117,8 @@ static uint count_bits(unsigned char *p, uint n)
                    approx number of cells per proc for the distributed
                      global geometric hash table
                    NOTE: gbl_hash_size*np needs to fit in a "global" integer
-                         (controlled by -DGS_GLOBAL_LONG or -DGS_GLOBAL_LONG_LONG;
-                          see "types.h")
+                         (controlled by -DGSLIB_USE_GLOBAL_LONG or
+                          -DGSLIB_USE_GLOBAL_LONG_LONG; see "types.h")
                    actual number of cells per proc will be greater by
                      ~ 3 gbl_hash_size^(2/3) / np^(1/3)
   
@@ -344,8 +344,8 @@ void ffindpts_setup(sint *const handle,
     comm_init_check(&fd->cr.comm, *comm, *np);
     buffer_init(&fd->cr.data,1000);
     buffer_init(&fd->cr.work,1000);
-    const uint *nsid = NULL;
-    const double *distfint=NULL;
+    const uint *nsid;
+    const double *distfint;
     setupms_aux_3(fd, elx,n,*nel,m,*bbox_tol,
                 *loc_hash_size,*gbl_hash_size, *npt_max, *newt_tol, nsid, distfint,ims);
   } else
@@ -355,7 +355,7 @@ void ffindpts_setup(sint *const handle,
 }
 
 #define CHECK_HANDLE(func) \
-  struct handle *h=NULL; \
+  struct handle *h; \
   if(*handle<0 || *handle>=handle_n || !(h=&handle_array[*handle])->data) \
     fail(1,__FILE__,__LINE__,func ": invalid handle")
 
